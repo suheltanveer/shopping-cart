@@ -1,0 +1,50 @@
+@import "default";
+@import "icons";
+
+body {
+  font-family: "Montserrat-extralight";
+}
+
+header {
+  background-color: $color-primary;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    margin-left: 20px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+
+    li {
+      border-right: 1px solid $color-secondary;
+      padding: 0 10px;
+
+      &:last-child {
+        border-right: none;
+        // margin-right: 10px;
+      }
+    }
+  }
+}
+
+main {
+  h1 {
+    font-family: "Montserrat-regular";
+    font-size: 1.2rem;
+    padding: 10px 0 10px 10px;
+    margin: 0;
+    border-bottom: 1px solid $color-secondary;
+
+    a {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      padding: 0 10px;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+// header
+// page header
+// product components
+// delivery availability component
+// order summary
+// action buttons - checkout & continue shopping
+// footer
+
+
+/*
+
+header
+    > logo
+    > nav
+
+h1 - page title
+
+section.products
+    > 
+
+aside.delivery
+section.order-summary
+
+section action
+
+footer
+
+
+*/
+
+
+
+// primary color :  131f97
+
+
+
+<picture alt="angry pirate">
+   <source src=hires.png media="min-width:800px">
+   <source src=midres.png media="min-width:480px">
+   <source src=lores.png>
+      <!-- fallback for browsers without support -->
+      <img src=midres.png alt="angry pirate">
+</picture>
