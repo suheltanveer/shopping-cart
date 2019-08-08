@@ -9,14 +9,33 @@
 
   &.icon-search {
     background-image: url("../icon/search.png");
-    background-size: 4rem 4rem;
+    background-size: 3rem 3rem;
   }
   &.icon-user {
     background-image: url("../icon/user.png");
-    background-size: 4rem 4rem;
+    background-size: 3rem 3rem;
   }
   &.icon-cart {
     background-image: url("../icon/shopping.png");
-    background-size: 4rem 4rem;
+    background-size: 3rem 3rem;
+  }
+
+  &.icon-plus {
+    background-image: url("../icon/plus.png");
+  }
+
+  &.icon-minus {
+    background-image: url("../icon/minus.png");
+  }
+  &.icon-minus-active {
+    background-image: url("../icon/minus-active.png");
+  }
+
+  &.icon-location {
+    background-image: url("../icon/LOCATION.png");
+  }
+
+  &.icon-delete {
+    background-image: url("../icon/DELETE.png");
   }
 }

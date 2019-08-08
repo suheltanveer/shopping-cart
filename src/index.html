@@ -12,27 +12,79 @@
         <a href="#" class="logo"
           ><img src="./images/logo.png" alt="Test logo"
         /></a>
-      </div>
-      <nav>
-        <div class="wrapper">
+        <nav>
           <ul>
+            <li class="track-order"><a href="#">Track Order</a></li>
             <li><a class="icon icon-search" href="#">Search</a></li>
             <li><a class="icon icon-user" href="#">User</a></li>
             <li><a class="icon icon-cart" href="#">Cart</a></li>
           </ul>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
+    <aside>
+      <div class="wrapper">
+        <ul>
+          <li data-symbol="&#x25C9">Shopping Cart</li>
+          <li data-symbol="&#x2B24;">Order Details</li>
+          <li data-symbol="&#x2B24;">Make Payment</li>
+        </ul>
+      </div>
+    </aside>
     <main>
       <div class="wrapper">
+        <div class="notification">
+          Shop for $5000 or more and get 10% discount on your order
+        </div>
         <h1><a class="left-arrow">&larr;</a>Shopping Cart</h1>
         <section class="products">
           <ul id="products-list"></ul>
         </section>
+        <div class="others">
+                <section class="delivery">
+                        <h2>Delivery Availability</h2>
+                        <div class="pincode-matcher">
+                          <span class="icon icon-location"></span>
+                          <input type="text" maxlength="6" placeholder="enter pincode" />
+                          <a>Change</a>
+                        </div>
+                        <div class="delivery-options"></div>
+                      </section>
+                      <section class="order-summary">
+                        <h2>Order Summary (<span class="order-items">0</span> items)</h2>
+                        <div>
+                          <span>Subtotal:</span>
+                          <span><span class="order-subtotal">0</span> $</span>
+                        </div>
+                        <div>
+                          <span>Total Discount:</span>
+                          <span><span class="order-discount">0</span> $</span>
+                        </div>
+                        <div>
+                          <span>Shipping:</span>
+                          <span class="order-shipping">Free</span>
+                        </div>
+                        <div class="grand-total">
+                          <span>Grand Total:</span>
+                          <span><span class="order-total">0</span> $</span>
+                        </div>
+                      </section>
+        </div>
+        <section class="actions">
+          <a class="checkout">Checkout</a>
+          <a class="continue" href="#">Continue Shopping</a>
+        </section>
       </div>
     </main>
     <footer>
-      <div class="wrapper"></div>
+      <div class="wrapper">
+        <ul>
+          <li><a href="#">Dummy</a></li>
+          <li><a href="#">Dummy</a></li>
+          <li><a href="#">Dummy</a></li>
+        </ul>
+        <p>Lorem Ipsum is simply dummy text of printing.</p>
+      </div>
     </footer>
   </body>
 </html>

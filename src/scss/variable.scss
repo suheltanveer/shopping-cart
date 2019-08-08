@@ -1,3 +1,14 @@
 $color-primary: #131f97;
 $color-secondary: #b9bddf;
+$color-tertiary: #211b60;
+$color-dark: #212121;
+$color-light: #f9f9f9;
+$color-light-border: darken($color-light, 5%);
+$color-dark-border: darken($color-light, 20%);
 $color-white: #fff;
+
+$border-radius: 10px;
+
+$font-thin: "Montserrat-thin";
+$font-regular: "Montserrat-regular";
+$font-medium: "Montserrat-medium";
