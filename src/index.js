@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   UI.init();
 
   // initialize store
-  if (JSON.parse(localStorage.getItem("data")) == null) {
+  const localStorageData = JSON.parse(localStorage.getItem("data"));
+  if (localStorageData == null) {
     store = new Store(Data);
     store.saveProducts();
   } else {
@@ -187,8 +188,6 @@ function deviceRenderer(x) {
 // Uitility func to shorten this func call
 function updateCartSummary(isOriginal = false) {
   if (!isOriginal) {
-    console.log(" temp called");
-    console.log(store.getTempProducts());
     UI.updateOrderSummary(
       store.getTempProducts(),
       store.getDiscount(),
@@ -196,8 +195,6 @@ function updateCartSummary(isOriginal = false) {
       store.getPincode()
     );
   } else {
-    console.log("original called");
-
     UI.updateOrderSummary(
       store.getProducts(),
       store.getDiscount(),
