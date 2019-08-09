@@ -1,67 +1,78 @@
-// import Data from "../data.json";
+import Data from "../data.json";
 
-// handles data storage
 export default class Store {
-  constructor(data) {
-    this.data = data;
-    this.tempProducts = this.data.products;
-  }
-
-  // save products in localstorage
-  saveProducts() {
-    this.data.products.forEach(product => {
-      product.selectedQuantity = 0;
-    });
-    this.tempProducts = this.data.products;
-    localStorage.setItem(
-      "data",
-      JSON.stringify(Object.assign(this.data, this.tempProducts))
-    );
-  }
-
-  // fetch products from localstorage
-  getProducts() {
-    return this.data.products;
-  }
-
-  getTempProducts() {
-    return this.tempProducts;
-  }
-
-  removeProduct(id) {
-    this.tempProducts = this.tempProducts.filter(o => o.id != id);
-  }
-
-  //   pincode options
-  getPincodes() {
-    return this.data.pincode;
-  }
-
-  //   Get discount data
-  getDiscount() {
-    return this.data.discount;
-  }
-
-  // Get user entered pincode
-  getPincode() {
-    return JSON.parse(localStorage.getItem("pincode"));
+  //   Get products
+  static getProducts() {
+    let products;
+    const storedData = localStorage.getItem("products");
+    if (localStorage.getItem("products") !== null) {
+      products = JSON.parse(storedData);
+    } else {
+      products = Data.products;
+      products.forEach(product => {
+        product.selectedQuantity = 0;
+      });
+      localStorage.setItem("products", JSON.stringify(products));
+    }
+    return products;
   }
 
   // Get product price from id
-  getProductPrice(id) {
-    const products = this.getProducts();
+  static getProductPrice(id) {
+    const products = Store.getProducts();
     let price;
     products.find((o, i) => {
       if (o.id == id) {
         price = products[i].price;
-        return;
+        return true; // stop searching
       }
     });
     return price;
   }
 
-  updateStore(id, selectedQuantity) {
-    const products = this.getTempProducts();
+  // Get product quantity selected
+  static getProductQuantity(id) {
+    const products = Store.getProducts();
+    let quantity;
+    products.find((o, i) => {
+      if (o.id == id) {
+        quantity = products[i].selectedQuantity;
+        return true; // stop searching
+      }
+    });
+    return quantity;
+  }
+
+  static deleteProduct(id) {
+    const products = Store.getProducts();
+    localStorage.setItem(
+      "products",
+      JSON.stringify(products.filter(o => o.id != id))
+    );
+  }
+
+  //   Get available pincodes
+  static getPincodes() {
+    return Data.pincode;
+  }
+
+  // User Entered Pincodes
+  static getPincode() {
+    return JSON.parse(localStorage.getItem("pincode"));
+  }
+  static updatePincode(pincode) {
+    localStorage.setItem("pincode", JSON.stringify(pincode));
+  }
+  static resetPincode() {
+    localStorage.setItem("pincode", JSON.stringify(""));
+  }
+
+  static getDiscount() {
+    return Data.discount;
+  }
+
+  static updateStore(id, selectedQuantity) {
+    const products = Store.getProducts();
     products.find((o, i) => {
       if (o.id == id) {
         products[i].selectedQuantity = selectedQuantity;
@@ -70,18 +81,6 @@ export default class Store {
     });
 
     // Save new data
-    this.tempProducts = products;
-    localStorage.setItem(
-      "data",
-      JSON.stringify(Object.assign(this.data, products))
-    );
-  }
-
-  deletePincode() {
-    localStorage.setItem("pincode", JSON.stringify(""));
-  }
-
-  updatePincode(pincode) {
-    localStorage.setItem("pincode", JSON.stringify(pincode));
+    localStorage.setItem("products", JSON.stringify(products));
   }
 }
