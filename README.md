@@ -1,4 +1,4 @@
-Shopping Cart app build in plain javscript - webpack
+Shopping Cart app built in plain javscript - webpack
 
 ## Install packages
 
